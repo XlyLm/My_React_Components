@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+.menu_container {
+  /*菜单容器*/
+  display: inline;
+  position: relative;
+}
+.menu_container .menu_btn {
+  /*菜单按钮*/
+  padding: 6px 10px;
+  border: 2px solid #adadad;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #333;
+  background-color: #fff;
+}
+.menu_container .menu_btn:hover {
+  background-color: #e6e6e6;
+}
+.menu_container .menu_btn .caret {
+  margin-left: 6px;
+  font-size: 0.8em;
+}
+.menu_container .menu {
+  /*菜单*/
+  min-width: 92px;
+  min-height: 64px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  margin:0;
+  border-radius: 4px;
+  border: 1px solid #adadad;
+}
+.menu_container .menu li {
+  line-height: 1.8em;
+}
+.menu_container .menu li a {
+  box-sizing: border-box;
+  display: block;
+  color: #333333;
+  padding: 0 10px;
+}
+.menu_container .menu li a:hover {
+  color: orange;
+}

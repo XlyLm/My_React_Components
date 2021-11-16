@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+.nav_container {
+  /*导航容器*/
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  background-color: #F8F8F8;
+}
+.nav_container .nav {
+  /*导航*/
+  width: 74%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+.nav_container .nav .brand {
+  /*导航商标*/
+  float: left;
+  margin-right: 24px;
+}
+.nav_container .nav .brand a {
+  font-size: 1.4em;
+  color: #6c6767;
+}
+.nav_container .nav ul {
+  /*导航内容*/
+  float: left;
+  display: flex;
+  justify-content: space-between;
+}
+.nav_container .nav ul a {
+  color: #999;
+  display: block;
+  padding: 0 12px;
+}
+.nav_container .nav ul a:hover {
+  color: orange;
+}
+.nav_container .nav .nav_menu_left {
+  /*导航左部菜单项*/
+  float: left;
+  margin-left: 24px;
+}
+.nav_container .nav .login_register_ctn {
+  /*导航登录和注册*/
+  float: right;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav_container .nav .login_register_ctn div {
+  width: 48%;
+}
+.nav_container .nav .login_register_ctn div .login_ctn {
+  color: orange;
+}
+.nav_container .nav .login_register_ctn div .register_ctn {
+  color: #999;
+}
+.nav_container .nav .login_register_ctn div .register_ctn:hover {
+  color: orange;
+}
+.nav_container .nav .nav_menu_right {
+  /*导航右侧菜单项*/
+  float: right;
+  margin-left: 24px;
+}

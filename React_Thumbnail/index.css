@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+.TN_container {
+  margin: 50px auto;
+  /*缩略图容器*/
+  width: 250px;
+  height: 330px;
+  padding: 4px;
+  border: 1px solid gray;
+}
+.TN_container img {
+  width: 250px;
+  height: 116px;
+}
+.TN_container .TN_content {
+  width: 230px;
+  height: 200px;
+  padding: 10px;
+  text-align: center;
+}
+.TN_container .TN_content h2 a {
+  color: #337ab7;
+}
+.TN_container .TN_content h2 a:hover {
+  color: #236298;
+}
+.TN_container .TN_content h2 a small {
+  color: #777;
+  font-weight: normal;
+}

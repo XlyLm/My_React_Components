@@ -16,7 +16,7 @@ export default function Nav(props){
 
     // 此处用于初始化数据
     useEffect(()=>{
-        changeFlag(myRef2)
+        changeFlag(myRef2);
         setTimer();
         return function clear(){
             clearInterval(timer);
@@ -59,8 +59,8 @@ export default function Nav(props){
     };
     // 改变flag指向
     const changeFlag = (ref)=>{
-        setFlag(-parseInt(myRef.style.left)/512);
-        setTimeout(()=>{
+        if(myRef !== null){
+            setFlag(-parseInt(myRef.style.left)/512);
             [...ref.children].forEach((value,index)=>{
                 if(index === flag){
                     [...value.children][0].className = "active";
@@ -68,7 +68,7 @@ export default function Nav(props){
                     [...value.children][0].className = " ";
                 }
             })
-        },100)
+        }
     };
 
     return (

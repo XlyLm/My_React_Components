@@ -21,7 +21,7 @@ export default function Menu(props){
             </a></div>
 
             <div className={"TN_content"}>
-                {/*缩略图问题内容*/}
+                {/*缩略图文本内容*/}
                 <h2><a href={content.title.url}>
                     {content.title.firstTitle} <br/>
                     <small>{content.title.secondTitle}</small>

@@ -28,7 +28,6 @@ a:focus {
   text-decoration: none;
 }
 .swiper_container {
-  margin: 50px auto;
   /*轮播图容器*/
   width: 500px;
   height: 200px;

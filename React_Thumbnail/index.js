@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import './index.css';
 
-export default function Menu(props){
+export default function Thumbnail(props){
     let content = {title:{url:"#",firstTitle:"I am Title1",secondTitle:"I am Title2"}};
     let img = {toUrl:"#",url:"./img/Thumbnail/first.png",name:"title"};
     let text = "文本内容文本内容文本内容文本内容文本内容文本内容";

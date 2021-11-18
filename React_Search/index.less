@@ -1,0 +1,88 @@
+*{margin:0;padding:0;}
+ul,li{margin:0;padding:0;list-style:none}
+a {text-decoration: none;}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
+a:focus {text-decoration: none;}
+
+/*------混合-------*/
+/*边框弧度+1px边框*/
+.border{
+  .border_radius();
+  border: 1px solid gray;
+}
+/*边框弧度*/
+.border_radius{
+  border-radius: 6px;
+}
+/*盒子大小和行高*/
+.box_size{
+  box-sizing: border-box;
+  width: 240px;
+  height: 2em;
+  .font_size();
+}
+/*字体大小*/
+.font_size{
+  font-size: 1em;
+}
+/*去边框*/
+.clear_border{
+  border: none;
+  outline: 0;
+}
+
+.search_container{
+  /*搜索框容器*/
+  .border();
+  position: relative;
+  padding: 6px;
+  display: inline-block;
+  .search_mask{
+    /*搜索幕遮*/
+    .box_size();
+    .border();
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    text-align: center;
+    background-color: white;
+    z-index: 2;
+  }
+  .search_box{
+    /*搜索盒子*/
+    .box_size();
+    .border();
+    position: relative;
+    z-index: 1;
+    .search{
+      /*搜索*/
+      .font_size();
+      .border_radius();
+      .clear_border();
+      box-sizing: border-box;
+      width: 86%;
+      height: 100%;
+      padding: 4px 6px;
+    }
+    .search_btn{
+      /*搜索按钮*/
+      .clear_border();
+      position: absolute;
+      top: -0.5px;
+      right: 0;
+      border-radius: 0 6px 6px 0;
+      width: 14%;
+      height: 102%;
+      background-color: orange;
+      &:active{color:white;}
+      i{
+        position: absolute;
+        top: 26%;
+        left: 28%;
+      }
+    }
+  }
+}

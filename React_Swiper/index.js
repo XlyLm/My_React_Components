@@ -4,7 +4,7 @@ import "./index.css";
 
 let timer=null;
 
-export default function Nav(props){
+export default function Swiper(props){
     let myRef = null;
     let myRef2 = null;
     const [flag, setFlag] = useState(0);

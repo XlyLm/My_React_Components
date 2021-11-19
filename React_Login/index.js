@@ -87,7 +87,7 @@ export default function Search(props){
                 <div className="user">
                     <i className={"iconfont icon-ren"}></i>
                     <input name={"user"} type="text" placeholder={"请输入用户名"} onChange={handleInputChange}
-                        onBlur={isPhone} onFocus={clear_err}/>
+                        onBlur={isPhone} onFocus={clear_err} autoComplete={"off"}/>
                 </div>
                 <div className={"err_box"} ref={(c)=>user_err=c}></div>
                 {/*密码输入框*/}

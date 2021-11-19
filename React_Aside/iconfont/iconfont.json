@@ -1,0 +1,51 @@
+{
+  "id": "2950915",
+  "name": "aside",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5027",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1166678",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "1620672",
+      "name": "向上箭头",
+      "font_class": "xiangshangjiantou",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "5093339",
+      "name": "人",
+      "font_class": "ren",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7568878",
+      "name": "24gf-phoneLoudspeaker",
+      "font_class": "24gf-phoneLoudspeaker",
+      "unicode": "e969",
+      "unicode_decimal": 59753
+    },
+    {
+      "icon_id": "25521820",
+      "name": "扳手",
+      "font_class": "spanner-fill",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    }
+  ]
+}

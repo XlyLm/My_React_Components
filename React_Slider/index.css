@@ -1,0 +1,90 @@
+/****混合****/
+.box {
+  height: 0.6em;
+  border-radius: 0.6em;
+  cursor: pointer;
+}
+.slider_containers {
+  /*滑条最外层容器*/
+  width: 30em;
+  height: 2em;
+  display: flex;
+  padding: 0 2em;
+  font-size: 16px;
+  justify-content: space-between;
+  border: 1px solid #e4e7ed;
+  border-radius: 1em;
+}
+.slider_containers .title {
+  width: 4em;
+  line-height: 2em;
+  text-align: center;
+  color: #8492a6;
+}
+.slider_containers .slider_container {
+  /*滑条容器*/
+  height: 0.6em;
+  border-radius: 0.6em;
+  cursor: pointer;
+  position: relative;
+  top: 0.7em;
+  width: 24em;
+  background-color: #e4e7ed;
+}
+.slider_containers .slider_container .slider {
+  /*滑条*/
+  height: 0.6em;
+  border-radius: 0.6em;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #409eff;
+}
+.slider_containers .slider_container .slider_btn {
+  /*位置*/
+  position: absolute;
+  top: -0.3em;
+  cursor: grab;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 2px solid #409eff;
+  background-color: white;
+}
+.slider_containers .slider_container .slider_btn .info {
+  display: none;
+}
+.slider_containers .slider_container .slider_btn:hover {
+  width: 1.2em;
+  height: 1.2em;
+  top: -0.4em;
+}
+.slider_containers .slider_container .slider_btn:hover .info {
+  /*信息提示*/
+  display: block;
+  width: 1.8em;
+  line-height: 1.8em;
+  position: absolute;
+  text-align: center;
+  left: -0.3em;
+  top: -2.4em;
+  background-color: gray;
+  color: white;
+  border-radius: 0.2em;
+}
+.slider_containers .slider_container .slider_btn:hover .info::before {
+  position: absolute;
+  left: 0.5em;
+  bottom: -0.8em;
+  content: '';
+  border: 0.4em solid transparent;
+  border-top: 0.4em solid gray;
+}
+.slider_containers .slider_container .slider_btn:active {
+  cursor: grabbing;
+}
+.slider_containers .slider_container .slider_btn:active .info {
+  display: none;
+}

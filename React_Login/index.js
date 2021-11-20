@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from "react";
 
 import "./index.css";
-import "./iconfont/iconfont.css"
+import "./iconfont/iconfont.css";
 
 export default function Search(props){
     const [test_er, setTester] = useState(null);    //验证码
@@ -30,7 +30,7 @@ export default function Search(props){
     // 获取输入信息
     function handleInputChange(e) {
         const name = e.target.name;
-        const value = e.target.value;
+        const value = e.target.value.trim();
         setData({...data,[name]:value});
     }
     //清除报错
@@ -58,10 +58,27 @@ export default function Search(props){
     // 提交信息
     function submit(e){
         e.preventDefault();
+        user_err.innerText = "";
+        //检验输入是否为空
+        if(data.test === undefined||data.test === ""){
+            test_err.innerText = "请输入验证码";
+            return false;
+        }
+        if(data.user === undefined||data.user === ""){
+            user_err.innerText = "手机号不能为空!";
+        }
+        if(data.password === undefined||data.password === ""){
+            pd_err.innerText = "密码不能为空!";
+        }
         //检查验证码是否正确
         if(data.test !== test_er){
             // 更新验证码
             test_err.innerText = "验证码错误!";
+            updateTest();
+            return null;
+        }
+        if((data.test === undefined||data.test === "")||(data.user === undefined||data.user === "")){
+            // 更新验证码
             updateTest();
             return null;
         }
@@ -77,6 +94,8 @@ export default function Search(props){
             pd_err.innerText = "密码错误!";
             // 更新验证码
             updateTest();
+        }else{
+            alert("登录成功!");
         }
     }
     return (
@@ -86,21 +105,21 @@ export default function Search(props){
                 {/*用户名输入框*/}
                 <div className="user">
                     <i className={"iconfont icon-ren"}></i>
-                    <input name={"user"} type="text" placeholder={"请输入用户名"} onChange={handleInputChange}
-                        onBlur={isPhone} onFocus={clear_err} autoComplete={"off"}/>
+                    <input name={"user"} type="text" placeholder={"请输入手机号"} onChange={handleInputChange}
+                        onBlur={isPhone} onFocus={clear_err} autoComplete={"off"} value={data.user||""}/>
                 </div>
                 <div className={"err_box"} ref={(c)=>user_err=c}></div>
                 {/*密码输入框*/}
                 <div className={"password"}>
                     <i className={"iconfont icon-24gl-lock2"}></i>
                     <input name={"password"} type="password" placeholder={"请输入密码"} onChange={handleInputChange}
-                           onFocus={clear_err}/>
+                           onFocus={clear_err}  value={data.password||""}/>
                 </div>
                 <div className={"err_box"} ref={(c)=>pd_err=c}></div>
                 {/*验证码*/}
                 <div className="test_container">
                     <input name={"test"} type="text" className="test" placeholder={"验证码:"} onChange={handleInputChange}
-                           onFocus={clear_err} autoComplete={"off"}/>
+                           onFocus={clear_err} autoComplete={"off"}  value={data.test||""}/>
                     <div className={"test_ers"}>
                         <div className="test_er">{test_er}</div>
                         <div className={"update"} onClick={updateTest}>点击刷新</div>
@@ -109,7 +128,7 @@ export default function Search(props){
                 <div className={"err_box"} ref={(c)=>test_err=c}></div>
                 {/*提交按钮*/}
                 <input type="submit" value={"登录"} className={"submit"}/>
-
+                {/*其他部分*/}
                 <div className={"others"}>
                     <a href="#/">短信登录</a><span>|</span>
                     <a href="#/">快速注册</a><span>|</span>

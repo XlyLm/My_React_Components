@@ -1,0 +1,37 @@
+{
+  "id": "2953438",
+  "name": "rate",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "586820",
+      "name": "cry",
+      "font_class": "cry",
+      "unicode": "e6e6",
+      "unicode_decimal": 59110
+    },
+    {
+      "icon_id": "5950866",
+      "name": "哭脸",
+      "font_class": "kulian",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "5950872",
+      "name": "脸-s",
+      "font_class": "lian-s",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "5950876",
+      "name": "笑脸",
+      "font_class": "xiaolian",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    }
+  ]
+}

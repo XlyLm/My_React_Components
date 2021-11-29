@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from "react";
+import axios from "axios";
 
 import "./index.css";
 import "./iconfont/iconfont.css";
@@ -36,7 +37,7 @@ export default function Search(props){
     //清除报错
     function clear_err(e) {
         const name = e.target.name;
-        if(name === "user"){
+        if(name === "username"){
             user_err.innerText = "";
         }
         if(name === "password"){
@@ -59,12 +60,13 @@ export default function Search(props){
     function submit(e){
         e.preventDefault();
         user_err.innerText = "";
+        pd_err.innerText = "";
         //检验输入是否为空
         if(data.test === undefined||data.test === ""){
             test_err.innerText = "请输入验证码";
             return false;
         }
-        if(data.user === undefined||data.user === ""){
+        if(data.username === undefined||data.username === ""){
             user_err.innerText = "手机号不能为空!";
         }
         if(data.password === undefined||data.password === ""){
@@ -77,36 +79,41 @@ export default function Search(props){
             updateTest();
             return null;
         }
-        if((data.test === undefined||data.test === "")||(data.user === undefined||data.user === "")){
+        if((data.test === undefined||data.test === "")||(data.username === undefined||data.username === "")){
             // 更新验证码
             updateTest();
             return null;
         }
-        //向后端发送数据验证用户和密码
-        //一下为模拟数据
-        const user = "15283117495";
-        const password = "123456789";
-        if(data.user !== user){
-            user_err.innerText = "用户不存在!";
-            // 更新验证码
-            updateTest();
-        }else if(data.password !== password){
-            pd_err.innerText = "密码错误!";
-            // 更新验证码
-            updateTest();
-        }else{
-            alert("登录成功!");
-        }
+        // 为servlet传参
+        let params = new URLSearchParams();
+        params.append('username', data.username);
+        params.append('password', data.password);
+        params.append('test', "***");
+        // 向后端发送请求验证登录
+        axios.post("/api/JavaWeb/login", params).then(res=>{
+            const rd = res.data;
+            if(rd.status==="00"){
+                user_err.innerText = rd.value;
+            }else if(rd.status==="01"){
+                pd_err.innerText = "密码错误!";
+            }else{
+                // 如果验证正确提交表单并跳转
+                e.target.submit();
+            }
+        }).catch(err=>{
+            console.log(err);
+        })
     }
     return (
         <div className={"login_container"}>
-            <form action="#"  onSubmit={submit}>
+            {/*后端登录后界面接口*/}
+            <form action="http://localhost:8080/JavaWeb/login" onSubmit={submit} method={"post"}>
                 <h1>LOGIN</h1>
                 {/*用户名输入框*/}
                 <div className="user">
                     <i className={"iconfont icon-ren"}></i>
-                    <input name={"user"} type="text" placeholder={"请输入手机号"} onChange={handleInputChange}
-                        onBlur={isPhone} onFocus={clear_err} autoComplete={"off"} value={data.user||""}/>
+                    <input name={"username"} type="text" placeholder={"请输入手机号"} onChange={handleInputChange}
+                        onBlur={isPhone} onFocus={clear_err} autoComplete={"off"} value={data.username||""}/>
                 </div>
                 <div className={"err_box"} ref={(c)=>user_err=c}></div>
                 {/*密码输入框*/}

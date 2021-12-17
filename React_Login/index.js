@@ -4,7 +4,7 @@ import axios from "axios";
 import "./index.css";
 import "./iconfont/iconfont.css";
 
-export default function Search(props){
+export default function Login(props){
     const [test_er, setTester] = useState(null);    //验证码
     const [flag, setFlag] = useState(true);     //验证码更新标志
     const [data, setData] = useState({});   //用户信息

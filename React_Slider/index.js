@@ -2,7 +2,7 @@ import React, {useState,useEffect} from "react";
 
 import "./index.css";
 
-export default function Search(props){
+export default function Slider(props){
     const [myRef, setMyRef] = useState(null);
     const [text, setText] = useState(0);
     const [width, setWidth] = useState("0");

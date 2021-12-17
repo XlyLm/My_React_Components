@@ -3,7 +3,7 @@ import React, {useState,useEffect} from "react";
 import "./index.css";
 import "./iconfont/iconfont.css";
 
-export default function Nav(props){
+export default function Rate(props){
     // 表情数组
     const expresses = [{type: "icon-kulian", color: 'black'},
         {type: "icon-kulian", color: '#c0c4cc'},

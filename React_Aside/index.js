@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import './index.css';
 import './iconfont/iconfont.css';
 
-export default function Menu(props){
+export default function Aside(props){
     // 此处用于初始化数据
     useEffect(()=>{
         return null;

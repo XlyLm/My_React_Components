@@ -1,0 +1,51 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  width: 160px;
+  margin: 0 auto;
+  div{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    &:before{
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      opacity: 1;
+      border-radius: 50%;
+      animation: circle 1.5s infinite;
+    }
+  }
+  .first{
+    background-color: #72ff7d;
+    &:before{
+      background-color: #72ff7d;
+    }
+  }
+  .second{
+    background-color: #42e5ff;
+    &:before{
+      background-color: #42e5ff;
+    }
+  }
+  .third{
+    background-color: #ffda72;
+    &:before{
+      background-color: #ffda72;
+    }
+  }
+  .fourth{
+    background-color: #ff4242;
+    &:before{
+      background-color: #ff4242;
+    }
+  }
+}
+@keyframes circle {
+  100%{
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}

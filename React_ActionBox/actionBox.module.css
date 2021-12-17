@@ -1,0 +1,125 @@
+.container {
+  box-sizing: border-box;
+  width: 220px;
+  height: 54px;
+  padding: 4px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
+.top,
+.bottom,
+.right,
+.left {
+  background-color: white;
+  box-shadow: 0 0 10px gold;
+}
+.top,
+.bottom {
+  width: inherit;
+  height: 2px;
+  position: absolute;
+}
+.top {
+  top: 0;
+  left: -220px;
+  animation: moveTop 4s infinite;
+}
+@keyframes moveTop {
+  12.5%,
+  75% {
+    left: 0;
+  }
+  87.5%,
+  100% {
+    left: 220px;
+  }
+}
+.bottom {
+  bottom: 0;
+  left: 220px;
+  animation: moveBottom 4s infinite;
+}
+@keyframes moveBottom {
+  25% {
+    left: 220px;
+  }
+  37.5%,
+  75% {
+    left: 0;
+  }
+  87.5%,
+  100% {
+    left: -220px;
+  }
+}
+.right,
+.left {
+  width: 2px;
+  height: inherit;
+  position: absolute;
+}
+.right {
+  right: 0;
+  top: -54px;
+  animation: moveRight 4s infinite;
+}
+@keyframes moveRight {
+  12.5% {
+    top: -54px;
+  }
+  25%,
+  75% {
+    top: 0;
+  }
+  87.5%,
+  100% {
+    top: 54px;
+  }
+}
+.left {
+  left: 0;
+  top: 54px;
+  animation: moveLeft 4s infinite;
+}
+@keyframes moveLeft {
+  37.5% {
+    top: 54px;
+  }
+  50%,
+  75% {
+    top: 0;
+  }
+  87.5%,
+  100% {
+    top: -54px;
+  }
+}
+.content {
+  height: 100%;
+  color: #fff;
+  overflow: hidden;
+  line-height: 46px;
+  text-align: center;
+  font-size: 2.4em;
+  transform: scale(0.2);
+  opacity: 0;
+  animation: scaleBox 4s infinite;
+}
+.content i {
+  font-size: 1.2em;
+}
+@keyframes scaleBox {
+  50%,
+  75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  87.5%,
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+/*# sourceMappingURL=actionBox.module.css.map */

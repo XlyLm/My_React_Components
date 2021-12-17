@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 160px;
+  margin: 0 auto;
+}
+.container div {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: relative;
+}
+.container div:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  border-radius: 50%;
+  animation: circle 1.5s infinite;
+}
+.container .first {
+  background-color: #72ff7d;
+}
+.container .first:before {
+  background-color: #72ff7d;
+}
+.container .second {
+  background-color: #42e5ff;
+}
+.container .second:before {
+  background-color: #42e5ff;
+}
+.container .third {
+  background-color: #ffda72;
+}
+.container .third:before {
+  background-color: #ffda72;
+}
+.container .fourth {
+  background-color: #ff4242;
+}
+.container .fourth:before {
+  background-color: #ff4242;
+}
+@keyframes circle {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+/*# sourceMappingURL=points.module.css.map */

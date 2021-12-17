@@ -1,0 +1,90 @@
+//盒子宽高
+@width: 220px;
+@height: 54px;
+//边厚度
+@thickness: 2px;
+//渐变盒子容器
+.container{
+  box-sizing: border-box;
+  width: @width;
+  height: @height;
+  padding: 4px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0);
+}
+//四边
+.top,.bottom,.right,.left{
+  background-color: white;
+  box-shadow: 0 0 10px gold;
+}
+.top,.bottom{
+  width: inherit;
+  height: @thickness;
+  position: absolute;
+}
+.top{
+  top: 0;
+  left: -@width;
+  animation: moveTop 4s infinite;
+}
+@keyframes moveTop {
+  12.5%,75% {left: 0;}
+  87.5%,100% {left: @width;}
+}
+.bottom{
+  bottom: 0;
+  left: @width;
+  animation: moveBottom 4s infinite;
+}
+@keyframes moveBottom {
+  25% {left: @width;}
+  37.5%,75% {left: 0;}
+  87.5%,100% {left: -@width;}
+}
+//----
+.right,.left{
+  width: @thickness;
+  height: inherit;
+  position: absolute;
+}
+.right{
+  right: 0;
+  top: -@height;
+  animation: moveRight 4s infinite;
+}
+@keyframes moveRight {
+  12.5% {top: -@height;}
+  25%,75% {top: 0;}
+  87.5%,100% {top: @height;}
+}
+.left{
+  left: 0;
+  top: @height;
+  animation: moveLeft 4s infinite;
+}
+@keyframes moveLeft {
+  37.5% {top: @height;}
+  50%,75% {top: 0;}
+  87.5%,100% {top: -@height;}
+}
+//内部内容
+.content{
+  height: 100%;
+  color:#fff;
+  overflow: hidden;
+  line-height: 46px;
+  text-align: center;
+  font-size: 2.4em;
+  transform: scale(0.2);
+  opacity: 0;
+  animation: scaleBox 4s infinite;
+  i{
+    font-size: 1.2em;
+  }
+}
+@keyframes scaleBox {
+  50%,75% {opacity: 1;transform: scale(1);}
+  87.5%,100% {opacity: 0;transform: translateX(-100%)}
+}
